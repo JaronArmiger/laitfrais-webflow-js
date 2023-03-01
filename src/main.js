@@ -14,7 +14,7 @@ const lenis = new Lenis({
   mouseMultiplier: 1,
   smoothTouch: false,
   touchMultiplier: 2,
-  infinite: false,
+  infinite: true,
 })
 
 function raf(time) {
@@ -26,13 +26,28 @@ requestAnimationFrame(raf)
 
 gsap.registerPlugin(ScrollTrigger)
 
-gsap.to('.section__01', {
-  yPercent: 100,
-  ease: 'none',
-  scrollTrigger: {
-    trigger: '.section__02',
-    start: 'top bottom',
-    end: 'top top',
-    scrub: true,
-  },
+let sections = gsap.utils.toArray('.section')
+
+sections.forEach((section) => {
+  gsap.to(section, {
+    yPercent: 100,
+    ease: 'none',
+    scrollTrigger: {
+      trigger: section,
+      start: 'bottom bottom',
+      end: 'bottom top',
+      scrub: true,
+    },
+  })
 })
+
+// gsap.to('.section__01', {
+//   yPercent: 100,
+//   ease: 'none',
+//   scrollTrigger: {
+//     trigger: '.section__02',
+//     start: 'top bottom',
+//     end: 'top top',
+//     scrub: true,
+//   },
+// })
