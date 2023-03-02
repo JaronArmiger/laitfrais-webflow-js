@@ -26,21 +26,6 @@ requestAnimationFrame(raf)
 
 gsap.registerPlugin(ScrollTrigger)
 
-// let sections = gsap.utils.toArray('.section')
-
-// sections.forEach((section) => {
-//   gsap.to(section, {
-//     yPercent: 100,
-//     ease: 'none',
-//     scrollTrigger: {
-//       trigger: section,
-//       start: 'bottom bottom',
-//       end: 'bottom top',
-//       scrub: true,
-//     },
-//   })
-// })
-
 // gsap.to('.section__01', {
 //   yPercent: 100,
 //   ease: 'none',
@@ -51,3 +36,18 @@ gsap.registerPlugin(ScrollTrigger)
 //     scrub: true,
 //   },
 // })
+
+let sections = gsap.utils.toArray('.section')
+
+sections.forEach((section) => {
+  gsap.to(section, {
+    yPercent: 100,
+    ease: 'none',
+    scrollTrigger: {
+      trigger: section,
+      start: 'bottom bottom',
+      end: 'bottom top',
+      scrub: true,
+    },
+  })
+})
