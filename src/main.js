@@ -26,7 +26,7 @@ requestAnimationFrame(raf)
 
 gsap.registerPlugin(ScrollTrigger)
 
-let sections = gsap.utils.toArray('.section')
+// let sections = gsap.utils.toArray('.section')
 
 // sections.forEach((section) => {
 //   gsap.to(section, {
